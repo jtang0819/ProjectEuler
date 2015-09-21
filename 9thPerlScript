@@ -1,0 +1,61 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+
+# sub pytha{
+	# my $a = $_[0];
+        # my $b = $_[1];
+        # my $c = $_[2];
+        # if ($a < $b && $b < $c){
+		
+		# my $d = $a + $b + $c;
+		# if ($d == 1000){
+			# print($a*$b*$c);
+			# return 1;
+		# }
+		# else {
+			# return 0;
+		# }
+		
+	# }
+	# else {
+		# return 0;
+	# }
+	# return 0;
+# }
+
+my $testme = 0;
+# while ($testme != 1){
+	for (my $a = 0; $a < 1000; $a++){
+		for (my $b = $1; $b < 1000 ; $b++){
+			my $c = sqrt($a**2 + $b**2);
+			if ($a + $b + $c == 1000){
+				# $testme = pytha($a,$b,$c);
+				
+				# if ($testme == 1){
+				my $d = $a*$b*$c;
+				print("the Product is $d");
+				print("$a,$b,$c");
+				# last;
+				# }
+			}
+			# if ($c >= 1001){
+				# last;
+			# }
+			
+			# print("A is $a\n");
+			# print("B is $b\n");
+			# print("C is $c\n");
+			# print("\n");
+			# print(pytha($a,$b,$c));
+			# print("\n");
+			
+		}
+	}
+# }
+
+# print(pytha(33,30,30));
+ 
+				
+	
