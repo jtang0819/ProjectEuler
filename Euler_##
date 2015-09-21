@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use bignum;
+use List::Util 'sum';
+
+my $number = 2**1000;
+my @splited = split //, $number;
+#print @splited;
+print sum(@splited); 
