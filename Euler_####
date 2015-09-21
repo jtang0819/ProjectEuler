@@ -1,0 +1,123 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use List::Util 'max';
+my @numberList = ();
+my @paliList = ();
+my @paliTestList = ();
+my @array3 = ();
+my @bigList = ();
+# my @checkThis = ();
+# my @flipped = ();
+# sub numbersbetween($$){
+      # my $lowerlimit = $_[0];
+      # my $upperlimit = $_[1];
+      # for (my $i = 0; length($i) < $upperlimit; $i++){
+              # #print("$i\n");
+              # if (length($i) > $lowerlimit){
+                      # push @bigList, $i;
+              # }
+      # }
+      # return (@bigList);
+# }   
+
+# sub flipper{
+        # my ($flipThis) = @_;
+        # my @split = split(undef,$flipThis);
+        # my $flipped = join(',',@split);
+        # return reverse($flipped);
+# } unncessary due to the fact reverse can just reverse(convertThis) works
+sub convertThis{
+        my ($convertThis) = @_;
+        my @split = split(undef,$convertThis);
+        my $converted = join(',',@split);
+        return $converted;
+}
+
+
+
+sub paliTest{
+        my ($firstNumber) = "@_";
+        #print("$firstNumber\n");
+        #my $secondNumber = $_[1];
+        #print("$secondNumber\n");
+        my $checkThis = ("$firstNumber");
+        my $flipped = reverse ("$checkThis");
+        #print ("$checkThis\n");
+        #print $flipped;
+        # foreach (
+        
+        #find len(of checkThis and flipped)
+        #for each element compare if equal.
+        #first not equal return false break
+        #true keep going until end of loop
+        #then return true
+        # print $checkThis;
+        # print $flipped;
+        
+        if ($checkThis == $flipped){
+                return 1;
+        }
+        else{
+                return 0;
+        }
+}
+
+
+sub pali {
+        my ($text) = @_;
+	print $text;
+	my $answer = <STDIN>;
+        chomp $answer;
+        my $small = $answer - 1;
+        my $big = $answer +1;
+        for (my $i = 0; length($i) < $big ; $i++){
+                my $curNum = $i;
+                #print("$i\n");
+                
+                        for (my $i = 0; length($i) < $big ; $i++){
+                                
+                                my $testNum = 0;
+                                my $secNum = $i;
+                                $testNum = $curNum * $secNum;    
+                                #print("$testNum\n");                  
+                                if (paliTest($testNum) == 1){
+                                        push @paliList, $testNum;
+                                 }
+                                $secNum = $i;
+                                for (my $i = 0; length($i) < $big ; $i++){
+                                        if (length($i) > $big){
+                                                last;
+                                        }
+                                }
+                                # else{
+                                        # next;
+                                # }   
+                     }
+                $curNum = $i;
+        }
+
+
+
+        # my (@array1) = numbersbetween($small,$big);
+        # my (@array2) = @array1;
+        
+        # foreach my $array1 (@array1){
+                # foreach my $array2(@array2){
+                        # push @array3, $array2*$array1;
+                # }
+        # }
+        
+        
+        #print("@array1,@array2,@array3"); 
+        print (max(@paliList));             
+        # if (paliTest = 1){
+                # push if palitest is true push the the two numbers onto the list
+                # check each iteration to make sure list has the biggest pair of numbers
+                # when all iterations complete, return biggest pair of numbers thus hopefully being the palindrome. lol.
+}
+
+# my $test3 = pali("Palindrome Numbers in what digit range?\n");
+# print("@paliList");
+
+my $test4 = pali("Enter a digit range you want the greatest palindrome of : ");
