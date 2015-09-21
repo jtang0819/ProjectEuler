@@ -1,0 +1,43 @@
+use warnings;
+use strict;
+use integer;
+
+$|=1;
+# print "Enter number: ";
+# chomp(my $x = <STDIN>);
+# die "That's not my kind of number!" if $x=~/\D/ || $x/1 ne $x;
+
+# if ($x <= 1) { print "$x\n"; exit }
+my $tri = 1;
+# my $i = 2;
+for (my $i = 2;$i < 2000000000;++$i){
+    $tri += $i;
+    #print("$tri\n");
+    my $x = $tri;
+    # get prime factors
+    my %fact;
+    my $fact = 2;
+    do {
+        ++$fact while $x/$fact*$fact != $x;
+        ++$fact{$fact};
+        $x /= $fact;
+    } while ($x > 1);
+
+    # apply all combinations
+    my @fact = 1;
+    while (($fact,my $count) = each %fact) {
+        my $index;
+        @fact = map $_ * $fact**(++$index/@fact % ($count+1)),
+                    (@fact) x ($count+1);
+    }
+    my $length = @fact;
+    #print($length);
+    #print("\n");
+    if ($length == 500){
+        print ("The Number is $tri\n");
+        last;
+    }
+    # print ($length);
+    # print ("\n");
+    # print "@{[sort {$a<=>$b} @fact]}\n";
+}
