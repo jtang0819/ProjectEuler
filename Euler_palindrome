@@ -1,0 +1,120 @@
+# #!/usr/bin/env perl
+# use strict;
+# # use warnings;
+
+# # # my $asd = 1000;
+# # # print(length($asd));
+
+# # my $checkThis = 99 * 91;
+# # my @values = split(undef,$checkThis);
+# # #my $checkAgainst = join(',',$checkThis);
+ # # # foreach my $val (@values) {
+    # # # print "$val\n";
+  # # # }
+# # print("@values");
+
+# # # sub flipper{
+        # # # my $flipThis = @_;
+        # # # my @split = split(undef,$flipthis);
+        # # # return reverse(@split);
+# # # }
+
+
+# # # sub paliTest{
+        # # # my $firstNumber = $_[0];
+        # # # my $secondNumber = $_[1];
+        # # # my $checkThis = $firstNumber * $secondNumber;
+        # # # my $flipped = flipper($checkThis);
+        # # # my $checkAgainst = join(',',$flipped);
+# # # }
+
+
+# # # paliTest(10,20);
+
+
+
+# # my $flipped = flipper($checkThis);
+
+# # sub flipper{
+        # # my $flipThis = @_;
+        # # my @split = split(undef,$flipthis);
+        # # #my $flipped = join(',',@split);
+        # # #return reverse($flipped);
+# # }
+
+# # print ("$flipped");
+# sub convertThis{
+        # my ($convertThis) = @_;
+        # my @split = split(undef,$convertThis);
+        # my $converted = join(',',@split);
+        # return $converted;
+# }
+
+
+# # sub flipper{
+        # # my ($text) = @_;
+        # # # return $text;
+        # # my @split = split(undef,$text);
+        # # my $flipped = join(',',@split);
+        # # return reverse($flipped);
+# # }
+
+# my $yourMom = convertThis(asdfasdfasdfasdf);
+# print("$yourMom");
+
+
+
+
+# sub get_two_arrays() {
+        # my @array1 = ("a", "b", "c", "d");
+        # my @array2 = (1, 2, 3, 4);
+        # return (@array1, @array2);
+    # }
+# print get_two_arrays();
+
+
+
+
+
+
+
+
+
+sub convertThis{
+        my ($convertThis) = @_;
+        my @split = split(undef,$convertThis);
+        my @converted = join(',',@split);
+        return @converted;
+}
+
+
+
+
+sub paliTest{
+        my ($firstNumber) = "@_";
+        #print("$firstNumber\n");
+        #my $secondNumber = $_[1];
+        #print("$secondNumber\n");
+        my $checkThis = ("$firstNumber");
+        my $flipped = reverse ("$checkThis");
+        #print ("$checkThis\n");
+        #print $flipped;
+        # foreach (
+        
+        #find len(of checkThis and flipped)
+        #for each element compare if equal.
+        #first not equal return false break
+        #true keep going until end of loop
+        #then return true
+        print $checkThis;
+        print $flipped;
+        
+        if ($checkThis == $flipped){
+                return 1;
+        }
+        else{
+                return 0;
+        }
+}
+
+print(paliTest(1234));
