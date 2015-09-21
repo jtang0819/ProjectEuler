@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+
+use Math::Prime::Util 'is_prime';
+use List::Util 'max';
+
+my @primeList = ();
+my $i = 0;
+while (@primeList < 10001){
+	
+	if (is_prime($i) == 2){
+		push @primeList,$i;
+	}
+	$i++;
+	#print($i);
+}
+
+my $big = max(@primeList);
+#my $big = (is_prime(5));
+print("$big\n");
