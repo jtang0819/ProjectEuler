@@ -1,0 +1,10 @@
+#!/usr/bin/env perl
+#this solves problem 3 lol buzzkill bzzzz
+use strict;
+use warnings;
+
+use Math::Prime::Util 'factor';
+#my $numbers = primes(1000000);
+
+my @factors = factor(600851475143);
+print ("@factors \n");
