@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use integer;
+
+#$|=1;
+# print "Enter number: ";
+# chomp(my $x = <STDIN>);
+# die "That's not my kind of number!" if $x=~/\D/ || $x/1 ne $x;
+# my $check = 0;
+my $x = 0;
+# if ($x <= 1) { print "$x\n"; exit }
+for (my $addx = 1; $addx <= 300; $addx++){
+    
+    #$x = $addx;
+    print("$x\n");
+    #get prime factors
+    my %fact;
+    my $fact = 2;
+    do {
+        ++$fact while $x/$fact*$fact != $x;
+        ++$fact{$fact};
+        $x /= $fact;
+    } while ($x > 1);
+
+    # apply all combinations
+    my @fact = 1;
+    while (($fact,my $count) = each %fact) {
+        my $index;
+        @fact = map $_ * $fact**(++$index/@fact % ($count+1)),
+                    (@fact) x ($count+1);
+    }
+    if (@fact == 200){
+        print("The Number is $x");
+    }
+    $x = $x + $addx;
+}
+# print "@{[sort {$a<=>$b} @fact]}\n";
