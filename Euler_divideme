@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+
+
+sub divideThis {
+	my ($divideMe) = @_;
+	#print ($divideMe);
+	my $checker = 0;
+	for (my $i = 2; $i <= 20; $i ++){
+		#print ("$i\n");
+		my $tester = $divideMe%$i;
+		
+		my $checker = $checker + $tester;
+		if ($checker != 0){
+			return 0;
+		}
+		
+		
+	}
+	return 1;
+}
+
+
+for (my $check = 232792500; $check < 232792600; $check+=20) {
+	#print("$check\n");
+	if (divideThis($check) ==1) {
+		print ("The number is $check");
+		last;
+	}
+	
+}
+
+# while (divideThis($i) != 1){
+	
+
+# my $gay = divideThis(10000000);
+# print ("$gay\n");
