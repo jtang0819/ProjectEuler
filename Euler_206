@@ -1,0 +1,68 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use bignum;
+
+
+
+for (my $i = 1020304050607080900; $i < 1929394959697989990; $i++){
+	if (secondCheck($i) == 1){
+		#print("$i\n");
+		
+		if (check($i) == 1) {
+			print ("$i\n");
+			$i = sqrt($i);
+			print ("The number is $i\n");
+		}
+	}
+}
+		
+		
+sub check{
+	my ($check) = @_;
+	$check = sqrt($check);
+	#print ("$check\n");
+	if (int($check) == $check){
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+	return 0;
+}
+
+sub secondCheck{
+	my ($check) = @_;
+	#print($check);
+	if (substr($check,0,1)== "1" && substr($check,2,1)=="2" && substr($check,4,1)=="3" && substr($check,6,1)=="4" && substr($check,8,1)=="5" && substr($check,10,1)=="6" && substr($check,12,1)=="7" && substr($check,14,1)=="8" && substr($check,16,1)=="9" && substr($check,18,1) == "0"){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+	return 0;
+}
+
+
+
+
+
+# my $checkThis = 1000000000;
+
+# while (check($checkThis) != 1)
+# {
+	# $checkThis++;
+	# if(check($checkThis == 1))
+	# {
+		# print ("The Number is : $checkThis\n");
+	# }
+	# else
+	# {
+		# $checkThis++;
+	# }
+	# #$checkThis++;
+	# #print ("The check is $checkThis\n");
+	
+# }
+		 
