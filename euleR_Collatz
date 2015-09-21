@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my @list;
+sub collatz {
+	my ($test) = @_;
+	if ($test != 1){
+		if ($test % 2 == 0 ){
+			#print $test;
+			$test /= 2;
+			push @list, $test;
+			collatz($test);
+		}
+		elsif ($test % 2 == 1 ){
+			#print $test;
+			$test = ((3 * $test) + 1);
+			push @list, $test;
+			collatz($test);
+		}
+		
+	}
+	else{
+		#print("fail");
+		$test = 0;
+	}
+	#print("the list is @list\n");
+}
+my $overAllCheck = 0;
+my $max = 0;
+for (my $i = 2; $i < 1000000; $i++){
+	collatz($i);
+	# print $i;
+	# print "\n";
+	my $length = (@list);
+	#print("$length\n");
+	# print (@list);
+	# print " \n";
+	# print("$length\n");
+	
+	if ($length > $overAllCheck){
+		$overAllCheck = $length;
+		$max = $i;
+	}
+	
+	undef @list;
+	print("The max number is : $max\n");
+	# print (@list);
+	# print " \n";
+	# $length = (@list);
+	# print("$length\n");
+}
+
+
