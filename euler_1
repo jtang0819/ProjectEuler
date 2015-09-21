@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my @multilist = ();
+
+
+
+sub multi {
+        my ($text) = @_;
+	print $text;
+	my $answer = <STDIN>;
+        chomp $answer;
+        for (my $i=0;$i<$answer;$i++){
+                if ($i%3 == 0 || $i%5 == 0){
+                        push @multilist, $i;
+                }
+        }
+        my $theSum = 0;
+        foreach my $num(@multilist){
+                $theSum = $theSum + $num;
+        }
+        print("The sum is $theSum"); 
+}
+
+my $test1 = multi("Please enter a number to find the sum of the multiples of 3 and 5 less than it : ");
