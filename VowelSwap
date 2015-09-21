@@ -1,0 +1,34 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+
+my $testThis = "i pledge allegiance to the flag of the united states of america";
+
+sub swapVowels { 
+	my ($test) = @_;
+	#print ($test);
+	my @splitted = split(//,$test);
+	
+	for (my $a = 0; $a < (@splitted/2); $a++) {
+		#print("$a\n");
+		if ($splitted[$a] eq "a" || $splitted[$a] eq "e" || $splitted[$a] eq "i" || $splitted[$a] eq "o" || $splitted[$a] eq "u"){ #|| $a eq "A" || $a eq "E" || $a eq "I" || $a eq "O" || $a eq "U") {
+			#print("$a\n");
+			for (my $i = 0; $i < length((reverse (@splitted)))/2; $i++) {
+				if ($splitted[$i] eq "a" || $splitted[$i] eq "e" || $splitted[$i] eq "i" || $splitted[$i] eq "o" || $splitted[$i] eq "u") {
+					print("$splitted[$i]\n");
+					splice(@splitted,$a,1,$splitted[$i]);
+				
+					# if ($a == "A" || $a == "E" || $a == "I" || $a == "O" || $a == "O") {
+						# $a = $i;
+					# }
+				}
+			}
+		}
+	}
+	# print("@splitted");
+	print ("$_\n") for (@splitted);
+	#print (join(/,@splitted));
+		
+}
+swapVowels($testThis);
