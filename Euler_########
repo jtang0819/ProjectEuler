@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use bignum;
+use List::Util 'sum';
+
+sub factorial {
+	my $number = @_;
+	my $final = 1;
+	for (my $i = 1; $i<=$number; $i++)
+	{
+		$final *= $i;
+	}
+	return my @splited = split //, $final;
+}
+print factorial(100);
